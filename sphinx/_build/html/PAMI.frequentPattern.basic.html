@@ -97,6 +97,27 @@
 <dt class="sig sig-object py" id="PAMI.frequentPattern.basic.Apriori.Apriori">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PAMI.frequentPattern.basic.Apriori.</span></span><span class="sig-name descname"><span class="pre">Apriori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minSup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\t'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PAMI/frequentPattern/basic/Apriori.html#Apriori"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PAMI.frequentPattern.basic.Apriori.Apriori" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_frequentPatterns</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Description<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Apriori is one of the fundamental algorithm to discover frequent patterns in a transactional database. This program employs apriori property (or downward closure property) to  reduce the search space effectively. This algorithm employs breadth-first search technique to find the complete set of frequent patterns in a transactional database.</p>
+</dd>
+<dt class="field-even">Reference<span class="colon">:</span></dt>
+<dd class="field-even"><p>Agrawal, R., Imieli ́nski, T., Swami, A.: Mining association rules between sets of items in large databases.
+In: SIGMOD. pp. 207–216 (1993), <a class="reference external" href="https://doi.org/10.1145/170035.170072">https://doi.org/10.1145/170035.170072</a></p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iFile</strong> – str :
+Name of the Input file to mine complete set of frequent patterns</p></li>
+<li><p><strong>oFile</strong> – str :
+Name of the output file to store complete set of frequent patterns</p></li>
+<li><p><strong>minSup</strong> – int or float or str :
+The user can specify minSup either in count or proportion of database size. If the program detects the data type of minSup is integer, then it treats minSup is expressed in count. Otherwise, it will be treated as float.</p></li>
+<li><p><strong>sep</strong> – str :
+This variable is used to distinguish items from one another in a transaction. The default seperator is tab space. However, the users can override their default separator.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="PAMI.frequentPattern.basic.Apriori.Apriori.getMemoryRSS">
 <span class="sig-name descname"><span class="pre">getMemoryRSS</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/PAMI/frequentPattern/basic/Apriori.html#Apriori.getMemoryRSS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PAMI.frequentPattern.basic.Apriori.Apriori.getMemoryRSS" title="Permalink to this definition"></a></dt>
