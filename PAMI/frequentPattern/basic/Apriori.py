@@ -38,6 +38,22 @@ from deprecated import deprecated
 
 class Apriori(_ab._frequentPatterns):
 
+    """
+        :Description: Apriori is one of the fundamental algorithm to discover frequent patterns in a transactional database. This program employs apriori property (or downward closure property) to  reduce the search space effectively. This algorithm employs breadth-first search technique to find the complete set of frequent patterns in a transactional database.
+
+        :Reference:  Agrawal, R., Imieli ́nski, T., Swami, A.: Mining association rules between sets of items in large databases.
+                In: SIGMOD. pp. 207–216 (1993), https://doi.org/10.1145/170035.170072
+
+        :param  iFile: str :
+                       Name of the Input file to mine complete set of frequent patterns
+        :param  oFile: str :
+                       Name of the output file to store complete set of frequent patterns
+        :param  minSup: int or float or str :
+                       The user can specify minSup either in count or proportion of database size. If the program detects the data type of minSup is integer, then it treats minSup is expressed in count. Otherwise, it will be treated as float.
+        :param  sep: str :
+                       This variable is used to distinguish items from one another in a transaction. The default seperator is tab space. However, the users can override their default separator.
+    """
+
 
     _minSup = float()
     _startTime = float()
