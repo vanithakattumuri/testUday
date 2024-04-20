@@ -1,5 +1,5 @@
-PAMI.frequentPattern package
-============================
+PAMI1 package
+=============
 
 Subpackages
 -----------
@@ -7,12 +7,12 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   PAMI.frequentPattern.basic
+   PAMI1.frequentPattern
 
 Module contents
 ---------------
 
-.. automodule:: PAMI.frequentPattern
+.. automodule:: PAMI1
    :members:
    :undoc-members:
    :show-inheritance:

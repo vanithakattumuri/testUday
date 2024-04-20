@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAMI.frequentPattern.basic.Apriori &mdash; a a documentation</title>
+  <title>PAMI1.frequentPattern.basic.Apriori &mdash; a a documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -42,7 +41,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">PAMI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">PAMI1</a></li>
 </ul>
 
         </div>
@@ -60,7 +59,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">PAMI.frequentPattern.basic.Apriori</li>
+      <li class="breadcrumb-item active">PAMI1.frequentPattern.basic.Apriori</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -69,13 +68,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for PAMI.frequentPattern.basic.Apriori</h1><div class="highlight"><pre>
+  <h1>Source code for PAMI1.frequentPattern.basic.Apriori</h1><div class="highlight"><pre>
 <span></span><span class="c1"># Apriori is one of the fundamental algorithm to discover frequent patterns in a transactional database. This program employs apriori property (or downward closure property) to  reduce the search space effectively. This algorithm employs breadth-first search technique to find the complete set of frequent patterns in a transactional database.</span>
 <span class="c1">#</span>
 <span class="c1"># **Importing this algorithm into a python program**</span>
 <span class="c1"># ----------------------------------------------------</span>
 <span class="c1">#</span>
-<span class="c1">#             import PAMI.frequentPattern.basic.Apriori as alg</span>
+<span class="c1">#             import PAMI1.frequentPattern.basic.Apriori as alg</span>
 <span class="c1">#</span>
 <span class="c1">#             obj = alg.Apriori(iFile, minSup)</span>
 <span class="c1">#</span>
@@ -103,13 +102,13 @@
 <span class="c1">#</span>
 
 
-<span class="kn">from</span> <span class="nn">PAMI.frequentPattern.basic</span> <span class="kn">import</span> <span class="n">abstract</span> <span class="k">as</span> <span class="n">_ab</span>
+<span class="kn">from</span> <span class="nn">PAMI1.frequentPattern.basic</span> <span class="kn">import</span> <span class="n">abstract</span> <span class="k">as</span> <span class="n">_ab</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span>
 <span class="kn">from</span> <span class="nn">deprecated</span> <span class="kn">import</span> <span class="n">deprecated</span>
 
 
 <div class="viewcode-block" id="Apriori">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori">[docs]</a>
 <span class="k">class</span> <span class="nc">Apriori</span><span class="p">(</span><span class="n">_ab</span><span class="o">.</span><span class="n">_frequentPatterns</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -133,9 +132,9 @@
     <span class="n">_startTime</span> <span class="o">=</span> <span class="nb">float</span><span class="p">()</span>
     <span class="n">_endTime</span> <span class="o">=</span> <span class="nb">float</span><span class="p">()</span>
     <span class="n">_finalPatterns</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">_iFile</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
-    <span class="n">_oFile</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
-    <span class="n">_sep</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+    <span class="n">_iFile</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">_oFile</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">_sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">_memoryUSS</span> <span class="o">=</span> <span class="nb">float</span><span class="p">()</span>
     <span class="n">_memoryRSS</span> <span class="o">=</span> <span class="nb">float</span><span class="p">()</span>
     <span class="n">_Database</span> <span class="o">=</span> <span class="p">[]</span>
@@ -188,17 +187,15 @@
                 <span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">value</span>
 
-
 <div class="viewcode-block" id="Apriori.startMine">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.startMine">[docs]</a>
-    <span class="nd">@deprecated</span><span class="p">(</span><span class="s2">&quot;It is recommended to use &#39;mine()&#39; instead of &#39;startMine()&#39; for mining process. Starting from January 2025, &#39;startMine()&#39; will be completely terminated.&quot;</span><span class="p">)</span>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.startMine">[docs]</a>
     <span class="k">def</span> <span class="nf">startMine</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">mine</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="Apriori.mine">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.mine">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.mine">[docs]</a>
     <span class="k">def</span> <span class="nf">mine</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_Database</span> <span class="o">=</span> <span class="p">[]</span>
@@ -259,28 +256,28 @@
 
 
 <div class="viewcode-block" id="Apriori.getMemoryUSS">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.getMemoryUSS">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.getMemoryUSS">[docs]</a>
     <span class="k">def</span> <span class="nf">getMemoryUSS</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_memoryUSS</span></div>
 
 
 <div class="viewcode-block" id="Apriori.getMemoryRSS">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.getMemoryRSS">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.getMemoryRSS">[docs]</a>
     <span class="k">def</span> <span class="nf">getMemoryRSS</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_memoryRSS</span></div>
 
 
 <div class="viewcode-block" id="Apriori.getRuntime">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.getRuntime">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.getRuntime">[docs]</a>
     <span class="k">def</span> <span class="nf">getRuntime</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_endTime</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_startTime</span></div>
 
 
 <div class="viewcode-block" id="Apriori.getPatternsAsDataFrame">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.getPatternsAsDataFrame">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.getPatternsAsDataFrame">[docs]</a>
     <span class="k">def</span> <span class="nf">getPatternsAsDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_ab</span><span class="o">.</span><span class="n">_pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 
         <span class="n">dataFrame</span> <span class="o">=</span> <span class="p">{}</span>
@@ -293,7 +290,7 @@
 
 
 <div class="viewcode-block" id="Apriori.save">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.save">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.save">[docs]</a>
     <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outFile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_oFile</span> <span class="o">=</span> <span class="n">outFile</span>
@@ -304,14 +301,14 @@
 
 
 <div class="viewcode-block" id="Apriori.getPatterns">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.getPatterns">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.getPatterns">[docs]</a>
     <span class="k">def</span> <span class="nf">getPatterns</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_finalPatterns</span></div>
 
 
 <div class="viewcode-block" id="Apriori.printResults">
-<a class="viewcode-back" href="../../../../PAMI.frequentPattern.basic.html#PAMI.frequentPattern.basic.Apriori.Apriori.printResults">[docs]</a>
+<a class="viewcode-back" href="../../../../PAMI1.frequentPattern.basic.html#PAMI1.frequentPattern.basic.Apriori.Apriori.printResults">[docs]</a>
     <span class="k">def</span> <span class="nf">printResults</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of Frequent Patterns:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getPatterns</span><span class="p">()))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Memory in USS:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">getMemoryUSS</span><span class="p">())</span>
