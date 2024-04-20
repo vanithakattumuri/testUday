@@ -114,8 +114,6 @@ class Apriori(_ab._frequentPatterns):
                 value = int(value)
         return value
 
-
-    @deprecated("It is recommended to use 'mine()' instead of 'startMine()' for mining process. Starting from January 2025, 'startMine()' will be completely terminated.")
     def startMine(self) -> None:
 
         self.mine()
