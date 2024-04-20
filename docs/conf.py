@@ -13,17 +13,17 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'PAMI'
-copyright = '2024, RAGE UDAY KIRAN'
-author = 'RAGE UDAY KIRAN'
+project = 'a'
+copyright = '2024, a'
+author = 'a'
 
 # The full version, including alpha/beta/rc tags
-release = '2024.04.19'
+release = 'a'
 
 
 # -- General configuration ---------------------------------------------------
