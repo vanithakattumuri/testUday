@@ -59,9 +59,9 @@ class Apriori(_ab._frequentPatterns):
     _startTime = float()
     _endTime = float()
     _finalPatterns = {}
-    _iFile = " "
-    _oFile = " "
-    _sep = " "
+    _iFile = ""
+    _oFile = ""
+    _sep = ""
     _memoryUSS = float()
     _memoryRSS = float()
     _Database = []
