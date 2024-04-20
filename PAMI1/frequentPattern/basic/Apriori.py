@@ -94,7 +94,6 @@ class Apriori(_ab._frequentPatterns):
 
 
     **Methods to execute code on terminal**
-      -----------------------------------
 
     .. code-block:: console
 
@@ -110,7 +109,6 @@ class Apriori(_ab._frequentPatterns):
 
 
     **Importing this algorithm into a python program**
-    ---------------------------------------------------
 
     .. code-block:: python
 
@@ -142,7 +140,6 @@ class Apriori(_ab._frequentPatterns):
 
 
     **Credits:**
-    ------------
 
              The complete program was written by P.Likhitha  under the supervision of Professor Rage Uday Kiran.
 
