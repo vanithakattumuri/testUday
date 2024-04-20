@@ -3,7 +3,7 @@
 # **Importing this algorithm into a python program**
 # ----------------------------------------------------
 #
-#             import PAMI.frequentPattern.basic.Apriori as alg
+#             import PAMI1.frequentPattern.basic.Apriori as alg
 #
 #             obj = alg.Apriori(iFile, minSup)
 #
@@ -48,7 +48,7 @@ Copyright (C)  2021 Rage Uday Kiran
      along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from PAMI.frequentPattern.basic import abstract as _ab
+from PAMI1.frequentPattern.basic import abstract as _ab
 from typing import Dict, Union
 from deprecated import deprecated
 
@@ -114,7 +114,7 @@ class Apriori(_ab._frequentPatterns):
 
     .. code-block:: python
 
-            import PAMI.frequentPattern.basic.Apriori as alg
+            import PAMI1.frequentPattern.basic.Apriori as alg
 
             obj = alg.Apriori(iFile, minSup)
 

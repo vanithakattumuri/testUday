@@ -3,7 +3,7 @@
 # **Importing this algorithm into a python program**
 # ----------------------------------------------------
 #
-#             import PAMI.frequentPattern.basic.Apriori as alg
+#             import PAMI1.frequentPattern.basic.Apriori as alg
 #
 #             obj = alg.Apriori(iFile, minSup)
 #
@@ -31,7 +31,7 @@
 #
 
 
-from PAMI.frequentPattern.basic import abstract as _ab
+from PAMI1.frequentPattern.basic import abstract as _ab
 from typing import Dict, Union
 from deprecated import deprecated
 
