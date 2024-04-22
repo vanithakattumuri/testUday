@@ -94,6 +94,8 @@
 <dt class="sig sig-object py" id="PAMI1.frequentPattern.basic.Apriori.Apriori">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PAMI1.frequentPattern.basic.Apriori.</span></span><span class="sig-name descname"><span class="pre">Apriori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minSup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\t'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PAMI1/frequentPattern/basic/Apriori.html#Apriori"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PAMI1.frequentPattern.basic.Apriori.Apriori" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_frequentPatterns</span></code></p>
+<section id="about-this-algorithm">
+<h3>About this algorithm<a class="headerlink" href="#about-this-algorithm" title="Link to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Apriori is one of the fundamental algorithm to discover frequent patterns in a transactional database. This program employs apriori property (or downward closure property) to  reduce the search space effectively. This algorithm employs breadth-first search technique to find the complete set of frequent patterns in a transactional database.</p>
@@ -102,20 +104,24 @@
 <dd class="field-even"><p>Agrawal, R., Imieli ́nski, T., Swami, A.: Mining association rules between sets of items in large databases.
 In: SIGMOD. pp. 207–216 (1993), <a class="reference external" href="https://doi.org/10.1145/170035.170072">https://doi.org/10.1145/170035.170072</a></p>
 </dd>
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>iFile</strong> – str :
-Name of the Input file to mine complete set of frequent patterns</p></li>
-<li><p><strong>oFile</strong> – str :
-Name of the output file to store complete set of frequent patterns</p></li>
-<li><p><strong>minSup</strong> – int or float or str :
-The user can specify minSup either in count or proportion of database size. If the program detects the data type of minSup is integer, then it treats minSup is expressed in count. Otherwise, it will be treated as float.</p></li>
-<li><p><strong>sep</strong> – str :
-This variable is used to distinguish items from one another in a transaction. The default seperator is tab space. However, the users can override their default separator.</p></li>
-</ul>
+<dt class="field-odd">param  iFile<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str :
+Name of the Input file to mine complete set of frequent patterns</p>
 </dd>
-<dt class="field-even">Attributes<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
+<dt class="field-even">param  oFile<span class="colon">:</span></dt>
+<dd class="field-even"><p>str :
+Name of the output file to store complete set of frequent patterns</p>
+</dd>
+<dt class="field-odd">param  minSup<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or float or str :
+The user can specify minSup either in count or proportion of database size. If the program detects the data type of minSup is integer, then it treats minSup is expressed in count. Otherwise, it will be treated as float.</p>
+</dd>
+<dt class="field-even">param  sep<span class="colon">:</span></dt>
+<dd class="field-even"><p>str :
+This variable is used to distinguish items from one another in a transaction. The default seperator is tab space. However, the users can override their default separator.</p>
+</dd>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
 <dt>startTime<span class="classifier">float</span></dt><dd><p>To record the start time of the mining process</p>
 </dd>
 <dt>endTime<span class="classifier">float</span></dt><dd><p>To record the completion time of the mining process</p>
@@ -131,7 +137,10 @@ This variable is used to distinguish items from one another in a transaction. Th
 </dl>
 </dd>
 </dl>
-<p><strong>Methods to execute code on terminal</strong></p>
+</section>
+<section id="execution-methods">
+<h3>Execution methods<a class="headerlink" href="#execution-methods" title="Link to this heading"></a></h3>
+<p><strong>Terminal command</strong></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Format:</span>
 
 <span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>python3<span class="w"> </span>Apriori.py<span class="w"> </span>&lt;inputFile&gt;<span class="w"> </span>&lt;outputFile&gt;<span class="w"> </span>&lt;minSup&gt;
@@ -143,10 +152,14 @@ This variable is used to distinguish items from one another in a transaction. Th
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>minSup will be considered in percentage of database transactions</p>
+<p>minSup can be specified  in support count or a value between 0 and 1.</p>
 </div>
-<p><strong>Importing this algorithm into a python program</strong></p>
+<p><strong>Calling from a python program</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PAMI1.frequentPattern.basic.Apriori</span> <span class="k">as</span> <span class="nn">alg</span>
+
+<span class="n">iFile</span> <span class="o">=</span> <span class="s1">&#39;sampleDB.txt&#39;</span>
+
+<span class="n">minSup</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># can also be specified between 0 and 1</span>
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">alg</span><span class="o">.</span><span class="n">Apriori</span><span class="p">(</span><span class="n">iFile</span><span class="p">,</span> <span class="n">minSup</span><span class="p">)</span>
 
@@ -173,9 +186,11 @@ This variable is used to distinguish items from one another in a transaction. Th
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total ExecutionTime in seconds:&quot;</span><span class="p">,</span> <span class="n">run</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Credits:</strong></p>
+</section>
+<section id="credits">
+<h3>Credits<a class="headerlink" href="#credits" title="Link to this heading"></a></h3>
 <blockquote>
-<div><p>The complete program was written by P.Likhitha  under the supervision of Professor Rage Uday Kiran.</p>
+<div><p>The complete program was written by P. Likhitha  under the supervision of Professor Rage Uday Kiran.</p>
 </div></blockquote>
 <dl class="py method">
 <dt class="sig sig-object py" id="PAMI1.frequentPattern.basic.Apriori.Apriori.getMemoryRSS">
@@ -279,6 +294,7 @@ This variable is used to distinguish items from one another in a transaction. Th
 <dd><p>Frequent pattern mining process will start from here</p>
 </dd></dl>
 
+</section>
 </dd></dl>
 
 </section>

@@ -1,7 +1,6 @@
 # Apriori is one of the fundamental algorithm to discover frequent patterns in a transactional database. This program employs apriori property (or downward closure property) to  reduce the search space effectively. This algorithm employs breadth-first search technique to find the complete set of frequent patterns in a transactional database.
 #
 # **Importing this algorithm into a python program**
-# ----------------------------------------------------
 #
 #             import PAMI1.frequentPattern.basic.Apriori as alg
 #
@@ -52,9 +51,11 @@ from PAMI1.frequentPattern.basic import abstract as _ab
 from typing import Dict, Union
 from deprecated import deprecated
 
-
 class Apriori(_ab._frequentPatterns):
     """
+    About this algorithm
+    ====================
+
     :Description: Apriori is one of the fundamental algorithm to discover frequent patterns in a transactional database. This program employs apriori property (or downward closure property) to  reduce the search space effectively. This algorithm employs breadth-first search technique to find the complete set of frequent patterns in a transactional database.
 
     :Reference:  Agrawal, R., Imieli ́nski, T., Swami, A.: Mining association rules between sets of items in large databases.
@@ -92,8 +93,12 @@ class Apriori(_ab._frequentPatterns):
           To store the transactions of a database in list
 
 
+    Execution methods
+    =================
 
-    **Methods to execute code on terminal**
+
+    **Terminal command**
+
 
     .. code-block:: console
 
@@ -105,14 +110,18 @@ class Apriori(_ab._frequentPatterns):
 
       (.venv) $ python3 Apriori.py sampleDB.txt patterns.txt 10.0
 
-    .. note:: minSup will be considered in percentage of database transactions
+    .. note:: minSup can be specified  in support count or a value between 0 and 1.
 
 
-    **Importing this algorithm into a python program**
+    **Calling from a python program**
 
     .. code-block:: python
 
             import PAMI1.frequentPattern.basic.Apriori as alg
+
+            iFile = 'sampleDB.txt'
+
+            minSup = 10  # can also be specified between 0 and 1
 
             obj = alg.Apriori(iFile, minSup)
 
@@ -139,9 +148,11 @@ class Apriori(_ab._frequentPatterns):
             print("Total ExecutionTime in seconds:", run)
 
 
-    **Credits:**
+    Credits
+    =======
 
-             The complete program was written by P.Likhitha  under the supervision of Professor Rage Uday Kiran.
+
+             The complete program was written by P. Likhitha  under the supervision of Professor Rage Uday Kiran.
 
     """
 
@@ -197,13 +208,9 @@ class Apriori(_ab._frequentPatterns):
         To convert the user specified minSup value
 
         :param value: user specified minSup value
-
         :type value: int or float or str
-
         :return: converted type
-
         :rtype: int or float
-
         """
         if type(value) is int:
             value = int(value)
@@ -290,9 +297,7 @@ class Apriori(_ab._frequentPatterns):
         Total amount of USS memory consumed by the mining process will be retrieved from this function
 
         :return: returning USS memory consumed by the mining process
-
         :rtype: float
-
         """
 
         return self._memoryUSS
@@ -303,9 +308,7 @@ class Apriori(_ab._frequentPatterns):
         Total amount of RSS memory consumed by the mining process will be retrieved from this function
 
         :return: returning RSS memory consumed by the mining process
-
         :rtype: float
-
         """
 
         return self._memoryRSS
@@ -316,9 +319,7 @@ class Apriori(_ab._frequentPatterns):
         Calculating the total amount of runtime taken by the mining process
 
         :return: returning total amount of runtime taken by the mining process
-
         :rtype: float
-
         """
 
         return self._endTime - self._startTime
@@ -329,9 +330,7 @@ class Apriori(_ab._frequentPatterns):
         Storing final frequent patterns in a dataframe
 
         :return: returning frequent patterns in a dataframe
-
         :rtype: pd.DataFrame
-
         """
 
         dataFrame = {}
@@ -348,11 +347,8 @@ class Apriori(_ab._frequentPatterns):
         Complete set of frequent patterns will be loaded in to an output file
 
         :param outFile: name of the output file
-
         :type outFile: csvfile
-
         :return: None
-
         """
         self._oFile = outFile
         writer = open(self._oFile, 'w+')
@@ -366,9 +362,7 @@ class Apriori(_ab._frequentPatterns):
         Function to send the set of frequent patterns after completion of the mining process
 
         :return: returning frequent patterns
-
         :rtype: dict
-
         """
         return self._finalPatterns
 
