@@ -348,7 +348,6 @@ class Apriori(_ab._frequentPatterns):
     def save(self, outFile) -> None:
         """
 
-        Complete set of frequent patterns will be loaded in to an output file
 
         :param outFile: name of the output file
         :type outFile: csvfile
