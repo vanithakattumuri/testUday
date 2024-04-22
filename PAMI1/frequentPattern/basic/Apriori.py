@@ -4,6 +4,10 @@
 #
 #             import PAMI1.frequentPattern.basic.Apriori as alg
 #
+#             iFile = 'sampleDB.txt'
+#
+#             minSup = 10  # can also be specified between 0 and 1
+#
 #             obj = alg.Apriori(iFile, minSup)
 #
 #             obj.mine()
