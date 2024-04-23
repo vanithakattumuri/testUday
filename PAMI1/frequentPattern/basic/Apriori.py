@@ -4,6 +4,10 @@
 #
 #             import PAMI1.frequentPattern.basic.Apriori as alg
 #
+#             iFile = 'sampleDB.txt'
+#
+#             minSup = 10  # can also be specified between 0 and 1
+#
 #             obj = alg.Apriori(iFile, minSup)
 #
 #             obj.mine()
@@ -344,7 +348,6 @@ class Apriori(_ab._frequentPatterns):
     def save(self, outFile) -> None:
         """
 
-        Complete set of frequent patterns will be loaded in to an output file
 
         :param outFile: name of the output file
         :type outFile: csvfile
