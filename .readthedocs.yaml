@@ -18,7 +18,7 @@ build:
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
-   configuration: docsFinal/conf.py
+   configuration: finalPamiDocs/conf.py
 
 
 
